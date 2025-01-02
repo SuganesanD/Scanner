@@ -6,6 +6,14 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- OpenCV.js CDN -->
+<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
+   function onOpenCvReady() {
+    console.log("OpenCV.js is ready!");
+    // Add any custom code to run once OpenCV is loaded
+  }
+</script>
+
 </head>
 <body>
   <app-root></app-root>

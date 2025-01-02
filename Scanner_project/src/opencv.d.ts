@@ -1,0 +1,4 @@
+interface Window {
+    onOpenCvReady: () => void;
+  }
+  
