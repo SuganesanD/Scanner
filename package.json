@@ -6,8 +6,9 @@
   "dependencies": {
     "@angular/common": "^19.0.5",
     "@angular/core": "^19.0.5",
+    "@ionic/angular": "^8.4.1",
     "ng2-pdf-viewer": "^10.4.0",
-    "rxjs": "^7.8.1",
+    "rxjs": "^7.5.0",
     "tesseract.js": "^5.1.1"
   }
 }

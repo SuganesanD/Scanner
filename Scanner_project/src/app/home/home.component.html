@@ -1,13 +1,29 @@
 <div class="container">
-  <h2>Upload File</h2>
-  <input type="file" (change)="onFileSelect($event)" />
-  <button (click)="onUpload()">Upload</button>
-
-  <!-- Display Success or Error Messages -->
-  <div *ngIf="uploadSuccessMessage" class="alert alert-success">
-    {{ uploadSuccessMessage }}
+  <input type="file" (change)="onFileUpload($event)" />
+  <div *ngIf="uploadedImage">
+    <img [src]="uploadedImage" alt="Uploaded Image" />
   </div>
-  <div *ngIf="uploadErrorMessage" class="alert alert-danger">
-    {{ uploadErrorMessage }}
+
+  <video #video width="640" height="480" autoplay></video>
+  <button (click)="capturePhoto()">Capture Photo</button>
+
+  <div *ngIf="capturedPhoto">
+    <img [src]="capturedPhoto" alt="Captured Photo" />
+  </div>
+
+  <canvas
+    #canvas
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp($event)"
+  ></canvas>
+  <button *ngIf="capturedPhoto" (click)="cropImage()">Crop</button>
+
+  <div *ngIf="croppedImage">
+    <button (click)="extractTextFromImage()">Extract Text</button>
+    <p>{{ extractedText }}</p>
+    <button *ngIf="extractedText" (click)="sendExtractedTextToServer()">
+      Send Text to Server
+    </button>
   </div>
 </div>
